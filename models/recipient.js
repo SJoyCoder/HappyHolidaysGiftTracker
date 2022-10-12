@@ -1,32 +1,35 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class Project extends Model {}
+class Recipient extends Model {}
 
-Project.init(
+Recipient.init(
   {
+    name: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      primaryKey: true,
+    },
+    relationship: {
+      type: DataTypes.STRING,
+      allowNull:null
+    },
     id: {
       type: DataTypes.INTEGER,
       allowNull: false,
       primaryKey: true,
       autoIncrement: true,
     },
-    name: {
-      type: DataTypes.STRING,
+    budget: {
+      type: DataTypes.DECIMAL,
+      allowNull: false,
+      primaryKey: true,
+    },
+    hasGiftIdea: {
+      type: DataTypes.BOOLEAN,
       allowNull: false,
     },
-    description: {
-      type: DataTypes.STRING,
-    },
-    date_created: {
-      type: DataTypes.DATE,
-      allowNull: false,
-      defaultValue: DataTypes.NOW,
-    },
-    needed_funding: {
-      type: DataTypes.FLOAT,
-      allowNull: false,
-    },
+    //Double check relationship to previous ID
     user_id: {
       type: DataTypes.INTEGER,
       references: {
@@ -40,8 +43,8 @@ Project.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'project',
+    modelName: 'recipient',
   }
 );
 
-module.exports = Project;
+module.exports = Recipient;
