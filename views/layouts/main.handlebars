@@ -9,7 +9,10 @@
   <link rel="stylesheet" href="/css/style.css">
 </head>
 
-<body>
+<body class="img">
+  {{!-- <div class="bg-img"> --}}
+
+  </div>
   <div class="flex-column justify-space-around">
     <header class="display-flex justify-space-between align-center p-2">
       <h1>
@@ -26,6 +29,12 @@
         {{/if}}
       </nav>
     </header>
+  {{!-- <div class="tile">
+   <figure class="image is is-128x128">
+    <img src="/public/assets/images/bg2-img.png">
+   </figure>
+  </div> --}}
+    
     <main class="container container-fluid mt-5">
       <!-- Render the sub layout -->
       {{{ body }}}

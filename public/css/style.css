@@ -16,3 +16,18 @@ header, .gift:not(:last-child) {
   color: #065b83;
   text-decoration: underline;
 }
+
+.dollar-amount {
+  color: #056605;
+  font-weight: bold;
+  margin-left: -5px;
+}
+
+body {
+  background-image: url("/assets/images/bg2-img.png");
+  background-position: center center;
+  background-repeat:  repeat;
+  background-attachment: fixed;
+  background-size:  cover;
+  
+}
