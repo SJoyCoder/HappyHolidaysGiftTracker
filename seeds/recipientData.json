@@ -1,0 +1,24 @@
+[
+    {
+        "name": "Joy",
+        "relationship": "Grandma",
+        "budget": 75,
+        "userId": 1,
+        "giftIdea": true
+    },
+    {
+        "name": "Brandt",
+        "relationship": "Dad",
+        "budget": 75,
+        "userId": 1,
+        "giftIdea": false
+    },
+    {
+        "name": "Alex",
+        "relationship": "Friend",
+        "budget": 35,
+        "userId": 1,
+        "giftIdea": true
+    }
+]
+
