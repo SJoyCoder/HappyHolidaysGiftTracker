@@ -1,10 +1,9 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
+class Recipient extends Model {}
 
-class Gift extends Model {}
-
-Gift.init(
+Recipient.init(
 
   {
     id: {
