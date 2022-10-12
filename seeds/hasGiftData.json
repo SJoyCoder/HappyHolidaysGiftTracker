@@ -1,0 +1,14 @@
+[
+    {
+        "giftId": 1,
+        "recipientId": 1
+    },
+    {
+        "giftId": 2,
+        "recipientId": 2   
+    },
+    {
+        "giftId": 2,
+        "recipientId": 1   
+    }
+]
