@@ -1,0 +1,15 @@
+[
+  {
+    "gift": "Gift Card",
+    "purchased": true,
+    "cost": 25,
+    "store": "Target"
+  },
+  {
+    "gift": "DIY Earrings",
+    "purchased": true,
+    "cost": 10,
+    "store": "DIY"
+  }
+]
+
