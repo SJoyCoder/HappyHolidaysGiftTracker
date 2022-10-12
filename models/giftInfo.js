@@ -1,14 +1,20 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class GiftInfo extends Model {}
+class GiftInfo extends Model { }
 
 GiftInfo.init(
   {
-      is_purchased: {
-        type: DataTypes.BOOLEAN,
-        allowNull:null
-      },
+    id: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      primaryKey: true,
+      autoIncrement: true,
+    },
+    is_purchased: {
+      type: DataTypes.BOOLEAN,
+      allowNull: null
+    },
     giftName: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -20,12 +26,6 @@ GiftInfo.init(
         model: 'recipient',
         key: 'budget',
       },
-    },
-    id: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-      primaryKey: true,
-      autoIncrement: true,
     },
     whereToBuy: {
       type: DataTypes.STRING,

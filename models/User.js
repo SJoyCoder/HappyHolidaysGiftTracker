@@ -10,7 +10,13 @@ class User extends Model {
 
 User.init(
   {
-    Username: {
+    id: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      primaryKey: true,
+      autoIncrement: true,
+    },
+    username: {
       type: DataTypes.STRING,
       allowNull: false,
     },
@@ -29,12 +35,6 @@ User.init(
       validate: {
         len: [8],
       },
-    },
-    id: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-      primaryKey: true,
-      autoIncrement: true,
     },
   },
   {

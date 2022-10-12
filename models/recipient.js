@@ -5,6 +5,12 @@ class Recipient extends Model {}
 
 Recipient.init(
   {
+    id: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      primaryKey: true,
+      autoIncrement: true,
+    },
     name: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -13,12 +19,6 @@ Recipient.init(
     relationship: {
       type: DataTypes.STRING,
       allowNull:null
-    },
-    id: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-      primaryKey: true,
-      autoIncrement: true,
     },
     budget: {
       type: DataTypes.DECIMAL,
