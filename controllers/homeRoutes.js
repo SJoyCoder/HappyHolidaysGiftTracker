@@ -2,7 +2,7 @@ const router = require('express').Router();
 const { Gifts, User, RecipientGifts, Recipient } = require('../models');
 const withAuth = require('../utils/auth');
 
-router.get('/test', async (req, res) => {
+router.get('/gift', async (req, res) => {
   try {
     // Get all gifts and JOIN with user data
     // const giftData = await Gifts.findAll({
@@ -30,7 +30,7 @@ router.get('/test', async (req, res) => {
     );
 
     console.log(...recGifts)
-    res.render('test', {
+    res.render('gift', {
       recGifts,
       logged_in: req.session.logged_in,
     });
