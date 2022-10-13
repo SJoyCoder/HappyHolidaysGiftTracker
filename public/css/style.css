@@ -41,7 +41,7 @@ header, .gift:not(:last-child) {
 body {
   background-image: url("/assets/images/bg2-img.png");
   background-position: center center;
-  background-repeat:  repeat;
+  background-repeat: repeat-x;
   background-attachment: fixed;
   background-size:  cover;
   
