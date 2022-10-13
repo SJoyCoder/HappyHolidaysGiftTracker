@@ -1,0 +1,9 @@
+
+<p>HELLO</p>
+{{#each recGifts as |recGift|}}
+    <h1 style="font-weight:600">{{recGift.name}}</h1>
+    {{#each recGift.gifts as |gift|}}
+    <p>{{gift.giftName}}</p>
+    {{/each}}
+
+{{/each}}
