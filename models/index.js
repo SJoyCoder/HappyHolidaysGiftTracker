@@ -1,18 +1,18 @@
 const User = require('./User');
 const Recipient = require('./recipient');
-const GiftInfo = require('./giftInfo');
-const HasGift = require('./hasGift');
+const Gifts = require('./Gifts');
+const RecipientGifts = require('./recipientGifts');
 
 
-const Gift = require('./Gift');
 
-User.hasMany(Gift, {
+
+User.hasMany(Recipient, {
   foreignKey: 'user_id',
   onDelete: 'CASCADE'
 });
 
-Gift.belongsTo(User, {
-  foreignKey: 'user_id'
+Gifts.belongsTo(Recipient, {
+  foreignKey: 'giftID'
 });
 
-module.exports = { User, Gift };
+module.exports = { User, Gifts };
