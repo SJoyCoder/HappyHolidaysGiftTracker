@@ -11,8 +11,23 @@ User.hasMany(Recipient, {
   onDelete: 'CASCADE'
 });
 
-Gifts.belongsTo(Recipient, {
-  foreignKey: 'giftID'
+Gifts.belongsToMany(Recipient, {
+  through: {
+    model: RecipientGifts,
+    unique: false
+  },
+});
+
+Recipient.belongsToMany(Gifts, {
+  through: {
+    model: RecipientGifts,
+    unique: false
+  },
+});
+
+
+Recipient.belongsTo(User, {
+  foreignKey: 'user_id'
 });
 
 module.exports = { User, Gifts };

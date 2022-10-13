@@ -22,10 +22,7 @@ Gifts.init(
     cost: {
       type: DataTypes.DECIMAL,
       allowNull: false,
-      references: {
-        model: 'recipient',
-        key: 'budget',
-      },
+     
     },
     whereToBuy: {
       type: DataTypes.STRING,
