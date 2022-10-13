@@ -15,7 +15,7 @@ Recipient.init(
     name: {
       type: DataTypes.STRING,
       allowNull: false,
-      primaryKey: true,
+      
     },
     relationship: {
       type: DataTypes.STRING,
@@ -24,7 +24,7 @@ Recipient.init(
     budget: {
       type: DataTypes.DECIMAL,
       allowNull: false,
-      primaryKey: true,
+      
     },
     hasGiftIdea: {
       type: DataTypes.BOOLEAN,
