@@ -1,9 +1,10 @@
 const sequelize = require('../config/connection');
-const { User, Gifts, Recipient } = require('../models');
+const { User, Gifts, Recipient, RecipientGifts } = require('../models');
 
 const userData = require('./userData.json');
 const giftData = require('./giftData.json');
 const recipientData = require('./recipientData.json');
+const recipientGiftsData = require('./recipientGiftsData.json');
 
 
 const seedDatabase = async () => {
@@ -24,6 +25,13 @@ const seedDatabase = async () => {
   for (const recipient of recipientData) {
     await Recipient.create({
       ...recipient,
+      user_id: users[Math.floor(Math.random() * users.length)].id,
+    });
+  }
+
+  for (const recipientGifts of recipientGiftsData) {
+    await RecipientGifts.create({
+      ...recipientGifts,
       user_id: users[Math.floor(Math.random() * users.length)].id,
     });
   }
