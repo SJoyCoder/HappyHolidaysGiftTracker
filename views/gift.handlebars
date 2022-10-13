@@ -1,7 +1,14 @@
 <div class="text-center">
-  <h2>{{name}}</h2>
+  <h2>{{giftName}}</h2>
   <p>{{{get_emoji}}}</p>
-  <p>{{description}}</p>
+  <ul>
+    
+     <li>{{is_purchased}}</li>
+     <li>{{cost}}</li> 
+     <li>{{whereTobuy}}</li>
+
+    
+  </ul>
   <p>Created by {{user.name}} on {{format_date date_created}}</p>
   <p>
     <span for="img" aria-label="gift">🎁</span>
