@@ -1,7 +1,7 @@
 const User = require('./User');
-const Recipient = require('./recipient');
+const Recipient = require('./Recipient');
 const Gifts = require('./Gifts');
-const RecipientGifts = require('./recipientGifts');
+const RecipientGifts = require('./RecipientGifts');
 
 
 
