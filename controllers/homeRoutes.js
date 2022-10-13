@@ -1,39 +1,52 @@
 const router = require('express').Router();
-const { Gift, User } = require('../models');
+const { Gifts, User, RecipientGifts, Recipient } = require('../models');
 const withAuth = require('../utils/auth');
 
-router.get('/', async (req, res) => {
+router.get('/test', async (req, res) => {
   try {
     // Get all gifts and JOIN with user data
-    const giftData = await Gift.findAll({
+    // const giftData = await Gifts.findAll({
+    // include: [
+    //   {
+    //     model: RecipientGifts,
+    //     attributes: ['gift_id'],
+    //   },
+    // ],
+    // });
+    // const recipientData = await Recipient.findAll()
+    const recipientGift = await Recipient.findAll({
       include: [
         {
-          model: User,
-          attributes: ['name'],
+          model: Gifts,
+          through: RecipientGifts,
         },
       ],
     });
-
     // Serialize data so the template can read it
-    const gifts = giftData.map((gift) => gift.get({ plain: true }));
+    // const gifts = giftData.map((gift) => gift.get({ plain: true }));
+    // const recipients = recipientData.map((recipient) => recipient.get({ plain: true }));
+    const recGifts = recipientGift.map((recipient) =>
+      recipient.get({ plain: true })
+    );
 
-    // Pass serialized data and session flag into template
-    res.render('homepage', { 
-      gifts, 
-      logged_in: req.session.logged_in 
+    console.log(...recGifts)
+    res.render('test', {
+      recGifts,
+      logged_in: req.session.logged_in,
     });
   } catch (err) {
+    console.log(err);
     res.status(500).json(err);
   }
 });
 
 router.get('/gift/:id', async (req, res) => {
   try {
-    const giftData = await Gift.findByPk(req.params.id, {
+    const giftData = await Gifts.findByPk(req.params.id, {
       include: [
         {
           model: User,
-          attributes: ['name'],
+          attributes: ['username'],
         },
       ],
     });
@@ -42,7 +55,7 @@ router.get('/gift/:id', async (req, res) => {
 
     res.render('gift', {
       ...gift,
-      logged_in: req.session.logged_in
+      logged_in: req.session.logged_in,
     });
   } catch (err) {
     res.status(500).json(err);
@@ -55,14 +68,14 @@ router.get('/profile', withAuth, async (req, res) => {
     // Find the logged in user based on the session ID
     const userData = await User.findByPk(req.session.user_id, {
       attributes: { exclude: ['password'] },
-      include: [{ model: Gift }],
+      include: [{ model: Gifts }],
     });
 
     const user = userData.get({ plain: true });
 
     res.render('profile', {
       ...user,
-      logged_in: true
+      logged_in: true,
     });
   } catch (err) {
     res.status(500).json(err);

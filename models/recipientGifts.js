@@ -11,15 +11,15 @@ RecipientGifts.init(
       primaryKey: true,
       autoIncrement: true,
     },
-      gift_id: {
+      giftId: {
         type: DataTypes.INTEGER,
         allowNull:null,
         references: {
-            model: 'Gifts',
+            model: 'gifts',
             key: 'id',
           },
       },
-    recipient_id: {
+    recipientId: {
       type: DataTypes.STRING,
       allowNull: false,
       references: {
