@@ -3,22 +3,22 @@
         "name": "Joy",
         "relationship": "Grandma",
         "budget": 75,
-        "user_id": 1,
-        "giftIdea": true
+        "hasGiftIdea": true,
+        "user_id": 1
     },
     {
         "name": "Brandt",
         "relationship": "Dad",
         "budget": 75,
-        "user_id": 1,
-        "giftIdea": false
+        "hasGiftIdea": false,
+        "user_id": 1
     },
     {
         "name": "Alex",
         "relationship": "Friend",
         "budget": 35,
-        "user_id": 1,
-        "giftIdea": true
+        "hasGiftIdea": true,
+        "user_id": 1
     }
 ]
 

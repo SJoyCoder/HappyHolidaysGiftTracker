@@ -30,4 +30,4 @@ Recipient.belongsTo(User, {
   foreignKey: 'user_id'
 });
 
-module.exports = { User, Gifts };
+module.exports = { User, Gifts, Recipient, RecipientGifts };
