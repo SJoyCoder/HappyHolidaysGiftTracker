@@ -11,13 +11,13 @@ Gifts.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    is_purchased: {
-      type: DataTypes.BOOLEAN,
-      allowNull: null
-    },
     giftName: {
       type: DataTypes.STRING,
       allowNull: false,
+    },
+    is_purchased: {
+      type: DataTypes.BOOLEAN,
+      allowNull: null
     },
     cost: {
       type: DataTypes.DECIMAL,

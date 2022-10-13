@@ -1,15 +1,15 @@
 [
   {
-    "gift": "Gift Card",
-    "purchased": true,
+    "giftName": "Gift Card",
+    "is_purchased": true,
     "cost": 25,
-    "store": "Target"
+    "whereToBuy": "Target"
   },
   {
-    "gift": "DIY Earrings",
-    "purchased": true,
+    "giftName": "DIY Earrings",
+    "is_purchased": true,
     "cost": 10,
-    "store": "DIY"
+    "whereToBuy": "DIY"
   }
 ]
 
