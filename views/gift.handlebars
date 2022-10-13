@@ -1,18 +1,29 @@
 <div class="text-center">
-  <h2>{{giftName}}</h2>
-  <p>{{{get_emoji}}}</p>
-  <ul>
+  {{!-- {{!-- <h2>{{giftName}}</h2> --}}
+  <p>{{{get_emoji}}}</p> 
+
+
+
+
+  {{#each recGifts as |recGift|}}
+    <h1 style="font-weight:600">{{recGift.name}}</h1>
+    {{#each recGift.gifts as |gift|}}
+    <p>{{gift.giftName}}</p>
+    {{/each}}
+
+{{/each}}
+  {{!-- <ul>
     <li>{{is-purchased}}</li>
     <li>{{cost}}</li>
     <li>{{whereToBuy}}</li>
-  </ul>
+  </ul> --}}
   {{!-- <p>Created by {{user.username}} on {{format_date date_created}}</p> --}}
   {{!-- <p>
     <span for="img" aria-label="gift">🎁</span>
     <span class="dollar-amount">{{format_amount needed_funding}}</span>
     needed
   </p> --}}
-  <p>
+  {{!-- <p>
     <button class="btn btn-primary">Fund this Gift!</button>
-  </p>
+  </p> --}}
 </div>
