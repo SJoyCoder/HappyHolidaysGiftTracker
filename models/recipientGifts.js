@@ -11,20 +11,20 @@ RecipientGifts.init(
       primaryKey: true,
       autoIncrement: true,
     },
-      giftID: {
+      gift_id: {
         type: DataTypes.INTEGER,
         allowNull:null,
         references: {
-            model: 'giftInfo',
+            model: 'Gifts',
             key: 'id',
           },
       },
-    personID: {
+    recipient_id: {
       type: DataTypes.STRING,
       allowNull: false,
       references: {
         model: 'recipient',
-        key: 'name',
+        key: 'id',
       },
     },
   },
@@ -33,7 +33,7 @@ RecipientGifts.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'hasGift',
+    modelName: 'recipientgifts',
   }
 );
 
