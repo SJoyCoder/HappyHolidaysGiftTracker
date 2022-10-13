@@ -44,16 +44,16 @@ Recipient.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-<<<<<<<< HEAD:models/recipient.js
+// <<<<<<<< HEAD:models/recipient.js
     modelName: 'recipient',
   }
 );
 
 module.exports = Recipient;
-========
-    modelName: 'gift',
-  }
-);
+// ========
+//     modelName: 'gift',
+//   }
+// );
 
-module.exports = Gift;
->>>>>>>> main:models/Gift.js
+// module.exports = Gift;
+// >>>>>>>> main:models/Gift.js

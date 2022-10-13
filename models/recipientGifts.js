@@ -1,10 +1,16 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class HasGift extends Model {}
+class RecipientGifts extends Model {}
 
-HasGift.init(
+RecipientGifts.init(
   {
+    id: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      primaryKey: true,
+      autoIncrement: true,
+    },
       giftID: {
         type: DataTypes.INTEGER,
         allowNull:null,
@@ -31,4 +37,4 @@ HasGift.init(
   }
 );
 
-module.exports = HasGift;
+module.exports = RecipientGifts;
