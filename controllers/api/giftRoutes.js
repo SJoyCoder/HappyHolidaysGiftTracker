@@ -1,16 +1,24 @@
 const router = require('express').Router();
-const { Gifts } = require('../../models');
+const { Gifts, RecipientGifts } = require('../../models');
 const withAuth = require('../../utils/auth');
 
 router.post('/', withAuth, async (req, res) => {
   try {
     const newGift = await Gifts.create({
       ...req.body,
-      user_id: req.session.user_id,
+      
     });
+    
+    console.log(newGift.id);
+    const recipientGift = await RecipientGifts.create({
+      giftId: newGift.id,
+      recipientId: 1,
+    });
+    
 
     res.status(200).json(newGift);
   } catch (err) {
+    console.log(err)
     res.status(400).json(err);
   }
 });

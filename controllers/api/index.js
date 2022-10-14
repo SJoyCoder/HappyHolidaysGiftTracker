@@ -3,6 +3,6 @@ const userRoutes = require('./userRoutes');
 const giftRoutes = require('./giftRoutes');
 
 router.use('/users', userRoutes);
-router.use('/gifts', giftRoutes);
+router.use('/gift', giftRoutes);
 
 module.exports = router;
