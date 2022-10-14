@@ -2,7 +2,9 @@ const router = require('express').Router();
 const { User } = require('../../models');
 
 router.post('/', async (req, res) => {
+  console.log("hello world!")
   try {
+    console.log(req.body)
     const userData = await User.create(req.body);
 
     req.session.save(() => {
@@ -13,8 +15,10 @@ router.post('/', async (req, res) => {
     });
   } catch (err) {
     res.status(400).json(err);
+    console.log(err)
   }
 });
+
 
 router.post('/login', async (req, res) => {
   try {
