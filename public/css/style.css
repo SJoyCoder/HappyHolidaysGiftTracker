@@ -35,6 +35,8 @@ body {
   
 }
 
+/*  */
+
 /* login page */
 #loginPage{
   margin-left: 400px ;
@@ -71,6 +73,6 @@ body {
   margin-right: 60 px;
   border: 2px solid; 
   width: 30%; 
-  background: linear-gradient(24deg, rgba(255,255,255,1) 0%, rgba(238,7,7,1) 100%);
-
+  color: black;
+  background: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(159,156,156,1) 100%);
 }
