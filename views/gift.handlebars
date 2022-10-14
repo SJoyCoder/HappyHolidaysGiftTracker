@@ -1,4 +1,4 @@
-<div class="text-center">
+<div id="giftBlock" >
   {{!-- {{!-- <h2>{{giftName}}</h2> --}}
   <p>{{{get_emoji}}}</p> 
 
@@ -6,11 +6,13 @@
 
 
   {{#each recGifts as |recGift|}}
+  {{!-- added a style element not found in css --}}
+  <div class="card" style= "margin-bottom: 40px;">
     <h1 style="font-weight:600">{{recGift.name}}</h1>
     {{#each recGift.gifts as |gift|}}
     <p>{{gift.giftName}}</p>
     {{/each}}
-
+</div>
 {{/each}}
   {{!-- <ul>
     <li>{{is-purchased}}</li>
