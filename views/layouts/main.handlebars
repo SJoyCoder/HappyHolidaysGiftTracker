@@ -23,8 +23,9 @@
       <nav>
         <!-- Conditionally render login or logout links -->
         {{#if logged_in}}
-        <a href="/profile">profile</a> |
+        <a href="/profile">Create Gift</a> |
         <button class="no-button" id="logout">logout</button>
+        <a href="/gift">view gifts</a> |
         {{else}}
         <a href="/login">Login</a>
         {{/if}}
