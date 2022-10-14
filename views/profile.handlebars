@@ -1,30 +1,101 @@
-<div class="row" id = "createGift">
+<div class="row" id = "createGiftRecip">
   <div class="col-auto">
-    <h2>Welcome, {{name}}!</h2>
+    <h2>Welcome, {{username}}!</h2>
   </div>
 </div>
 
-<div class="row mt-4" id = "createGift">
+{{!-- <div class="row mt-4" id = "createRecipient">
   <div class="col-md-6">
-    <h2>Create a New Gift:</h2>
+    <h2>Create a New Recipient:</h2>
 
     <form class="form new-gift-form">
       <div class="form-group" id="createGiftChild">
-        <label for="gift-name">gift name:</label>
+        <label for="gift-name">Gift Name:</label>
         <input class="form-input" type="text" id="gift-name" name="gift-name" />
       </div>
       <div class="form-group" id="createGiftChild">
-        <label for="gift-funding">needed funding ($):</label>
-        <input class="form-input" type="number" id="gift-funding" name="gift-funding" />
+        <label for="gift-purchased">Gift Purchased?:</label>
+        <input class="form-input" type="number" id="gift-cost" name="gift-cost" />
       </div>
       <div class="form-group" id="createGiftChild">
-        <label for="gift-desc">description:</label>
-        <textarea class="form-input" id="gift-desc" name="gift-desc"></textarea>
+        <label for="gift-store">Store:</label>
+        <input class="form-input" id="gift-desc" name="gift-desc"></input>
       </div>
       <div class="form-group">
         <button type="submit" class="btn btn-primary">Create</button>
       </div>
     </form>
+  </div> --}}
+
+
+<div id = "createGift">
+  <div class="card">
+    <header class="card-header">
+    <p class="card-header-title">
+      Create a New Gift:
+    </p>
+    </header>
+
+    {{!-- <form class="form new-gift-form"> --}}
+
+
+      <div class="field createGiftChild">
+        <label class="label" for="gift-name">Gift Name</label>
+        <div class="control">
+          <input class="input" type="text" placeholder="Gift" id="gift-name" name="gift-name"></input>
+        </div>
+      </div>
+
+      <div class="field createGiftChild">
+        <label class="label" for="gift-cost">Cost:</label>
+        <div class="control">
+          <input class="input" type="number" id="gift-cost" name="gift-cost" placeholder="$">
+        </div>
+      </div>
+
+      <div class="field createGiftChild">
+        <label class="label" for="gift-store">Store:</label>
+        <div class="control">
+          <input class="input" type="text" id="gift-store" name="gift-store" placeholder="Store name">
+        </div>
+      </div>
+
+
+      <div class="field createGiftChild">
+        <div class="control">
+          <label class="label" for="gift-purchased" name="gift-purchased">Gift Purchased?</label>
+          <label class="radio">
+            <input type="radio" name="question">
+            Yes
+          </label>
+          <label class="radio">
+            <input type="radio" name="question">
+            No
+          </label>
+        </div>
+      </div>
+
+      <div class="field createGiftChild">
+        <label class="label" for="gift-recipient" name="gift-recipient">Recipient</label>
+        <div class="control">
+          <div class="select">
+            <select>
+              <option>make loop</option>
+              <option>of recipients</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      {{!-- <div class="form-group">
+        <button type="submit" class="btn btn-primary">Create</button>
+      </div>
+    </form> --}}
+    <div class="field is-grouped">
+      <div class="control">
+        <button class="button is-success">Create</button>
+      </div>
+    </div>
   </div>
 
   {{#if gifts.length}}
