@@ -8,17 +8,64 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
   <link rel="stylesheet" href="/css/style.css">
 </head>
+<style>
+ul {
+  list-style-type: none; 
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: rgb(193, 189, 189);;
+}
+
+li {
+  float: left;
+  border-right:1px solid #bbb;
+}
+
+
+
+li a {
+  display: block;
+  color: black;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover:not(.active) {
+  background-color: #111;
+}
+
+.active {
+  background-color: rgba(159,156,156,1);
+}
+</style>
+</head>
+<body>
+
+<ul>
+  <li><a class="active">🎁Happy Holidays Christmas Tracker🎁</a></a></li>
+  <li style="float:right"><a href="/login">Logout</a></li>
+  <li style="float:right"><a href="/profile">Create Gift List</a></li>
+  <li style="float:right"><a href="/gift">View Gifts</a></li>
+
+</ul>
+
+</body>
+
+
+
 
 
   {{!-- <div class="bg-img"> --}}
 
-  </div>
+  {{!-- </div>
   {{!-- style element not found in css --}}
   <div class="flex-column justify-space-around" style="height: 100vh;">
     <header class="display-flex justify-space-between align-center p-2">
       <h1>
         <span role="img" aria-label="gift">🎁</span>
-        <a href="/">Happy Holidays Gift Tracker</a>
+        <a href="/">Happy Holidays Gift Tracker</a> 
       </h1>
       <nav>
         <!-- Conditionally render login or logout links -->
@@ -30,8 +77,37 @@
         <a href="/login">Login</a>
         {{/if}}
       </nav>
-    </header>
+    </header> --}}
 
+
+
+
+
+
+<nav class="navbar is-light" class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-start">
+    <a class="navbar-item" id="NavbarTitle">🎁Happy Holidays Christmas Tracker🎁</a>
+    
+
+  </div>
+  <div id="navbarBasicExample" class="navbar-menu">
+    <div class="navbar-end">
+      <a class="navbar-item" href="/profile">
+      {{#if logged_in}}
+        Create Gifts
+      </a>
+      <a class="navbar-item" href="/gift">
+        View Gifts
+      </a>
+      {{else}}
+    <a class="navbar-item" href="/login">
+        login
+      </a>
+{{!-- <button class="no-button" id="logout">logout</button> --}}
+        {{/if}}
+    </div>
+  </div>
+</nav>
     
     <main class="container container-fluid mt-5">
       <!-- Render the sub layout -->
