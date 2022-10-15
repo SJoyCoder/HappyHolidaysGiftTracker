@@ -2,8 +2,10 @@ header, .gift:not(:last-child) {
   border-bottom: 1px solid #ccc;
 }
 
-
-
+h2 {
+  color: #b53642;
+  font-weight: bold;
+}
 
 .no-button {
   background: none;
@@ -25,14 +27,17 @@ header, .gift:not(:last-child) {
   font-weight: bold;
   margin-left: -5px;
 }
-
+html {
+  height: 100vh
+}
 body {
   background-image: url("/assets/images/bg2-img.png");
   background-position: center center;
   background-repeat: repeat-x;
-  background-attachment: fixed;
+  /* background-attachment: fixed; */
   background-size:  cover;
-  
+  height: 100vh;
+ overflow:auto
 }
 
 /* login page */
@@ -49,7 +54,7 @@ body {
 }
 
 /* profile page */
-#createGift{
+#createGiftRecip{
   margin-left: 400px ;
   padding-top: 20px;
   font-size: large;
@@ -70,7 +75,7 @@ body {
   padding: 20px; 
   margin-right: 60 px;
   border: 2px solid; 
-  width: 30%; 
   color: black;
   background: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(159,156,156,1) 100%);
+  margin-bottom: 10px;
 }
