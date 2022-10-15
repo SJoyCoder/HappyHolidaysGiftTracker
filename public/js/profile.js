@@ -1,14 +1,15 @@
 const newFormHandler = async (event) => {
   event.preventDefault();
 
-  const name = document.querySelector('#gift-name').value.trim();
-  const needed_funding = document.querySelector('#gift-funding').value.trim();
-  const description = document.querySelector('#gift-desc').value.trim();
+  const giftName = document.querySelector('#gift-name').value.trim();
+  const cost = document.querySelector('#gift-cost').value.trim();
+  const whereToBuy = document.querySelector('#gift-store').value.trim();
+  const is_purchased = document.querySelector("#cd-bought").checked
 
-  if (name && needed_funding && description) {
-    const response = await fetch(`/api/gifts`, {
+  if (giftName && cost && whereToBuy ) {
+    const response = await fetch(`/api/gift`, {
       method: 'POST',
-      body: JSON.stringify({ name, needed_funding, description }),
+      body: JSON.stringify({ giftName, is_purchased, cost, whereToBuy  }),
       headers: {
         'Content-Type': 'application/json',
       },
@@ -39,8 +40,8 @@ const delButtonHandler = async (event) => {
 };
 
 document
-  .querySelector('.new-gift-form')
-  .addEventListener('submit', newFormHandler);
+  .querySelector('#gift-btn')
+  .addEventListener('click', newFormHandler);
 
 document
   .querySelector('.gift-list')
