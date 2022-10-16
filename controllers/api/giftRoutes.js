@@ -18,7 +18,7 @@ router.post('/', withAuth, async (req, res) => {
 
     res.status(200).json(newGift);
   } catch (err) {
-    console.log(err)
+    console.log()
     res.status(400).json(err);
   }
 });

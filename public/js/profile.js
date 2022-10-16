@@ -68,11 +68,11 @@ document
 .querySelector('#addRecipientButton')
 .addEventListener('click', recipientHandler);
 
-// document
-//   .querySelector('#gift-btn')
-//   .addEventListener('click', newFormHandler);
+document
+  .querySelector('#gift-btn')
+  .addEventListener('submit', newFormHandler);
 
 
-// document
-//   .querySelector('.gift-list')
-//   .addEventListener('click', delButtonHandler);
+document
+  .querySelector('.gift-list')
+  .addEventListener('click', delButtonHandler);
