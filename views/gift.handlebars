@@ -8,12 +8,10 @@
   {{#each recGifts as |recGift|}}
   {{!-- added a style element not found in css --}}
   <div class="card" style= "margin-bottom: 40px;">
-    <p>{{{get_emoji}}}</p>
-    <h1 style="font-weight:600">{{recGift.name}}</h1>
+    <h1 style="font-weight:600; text-decoration: underline; font-size: x-large;">{{recGift.name}}{{{get_emoji}}}</h1>
     {{#each recGift.gifts as |gift|}}
     <p>{{gift.giftName}}</p>
     {{/each}}
-    <p>{{{get_emoji}}}</p>
 </div>
 {{/each}}
   {{!-- <ul>

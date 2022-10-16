@@ -68,9 +68,9 @@ document
 .querySelector('#addRecipientButton')
 .addEventListener('click', recipientHandler);
 
-document
-  .querySelector('#gift-btn')
-  .addEventListener('click', newFormHandler);
+// document
+//   .querySelector('#gift-btn')
+//   .addEventListener('click', newFormHandler);
 
 
 // document
