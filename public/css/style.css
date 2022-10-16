@@ -80,6 +80,7 @@ body {
   color: black;
   background: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(159,156,156,1) 100%);
   margin-bottom: 10px;
+
 }
 
 /* nav bar */
@@ -128,4 +129,5 @@ li a:hover:not(.active) {
 }
 #logout:hover{
   background-color: rgba(159,156,156,1);
+
 }
