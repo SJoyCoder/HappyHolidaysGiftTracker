@@ -8,77 +8,20 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
   <link rel="stylesheet" href="/css/style.css">
 </head>
-<style>
-ul {
-  list-style-type: none; 
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  background-color: rgb(193, 189, 189);;
-}
-
-li {
-  float: left;
-  border-right:1px solid #bbb;
-}
-
-
-
-li a {
-  display: block;
-  color: black;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-}
-
-li a:hover:not(.active) {
-  background-color: rgba(159,156,156,1);
-}
-
-.active {
-  background-color: rgb(193, 189, 189);
-  color:#b53642;
-  font-family:fantasy;
-  font-weight:900;
-}
-</style>
-</head>
-<body>
-
+      
+<nav>
 <ul>
   <li><a class="active">🎁Happy Holidays Christmas Tracker🎁</a></a></li>
-  <li style="float:right"><a href="/login">Logout</a></li>
+  {{#if logged_in}}
+  <li style="float:right"><button class="no-button" id="logout">Logout</button></li>
   <li style="float:right"><a href="/profile">Create Gift List</a></li>
   <li style="float:right"><a href="/gift">View Gifts</a></li>
-
+   {{else}}
+   <li style="float:right"><a href="/login">Login</a></li>
+ {{/if}}
 </ul>
 
-</body>
-
-
-
-
-
-
-  {{!-- style element not found in css --}}
-  <div class="flex-column justify-space-around" style="height: 100vh;">
-    <header class="display-flex justify-space-between align-center p-2">
-      <h1>
-        <span role="img" aria-label="gift">🎁</span>
-        <a href="/">Happy Holidays Gift Tracker</a> 
-      </h1>
-      <nav>
-        <!-- Conditionally render login or logout links -->
-        {{#if logged_in}}
-        <a href="/profile">Create Gift</a> |
-        <button class="no-button" id="logout">logout</button>
-        <a href="/gift">view gifts</a> |
-        {{else}}
-        <a href="/login">Login</a>
-        {{/if}}
-      </nav>
-    </header>
+</nav>
 
     <main class="container container-fluid mt-5">
       <!-- Render the sub layout -->

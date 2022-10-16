@@ -23,6 +23,32 @@ const newFormHandler = async (event) => {
   }
 };
 
+const recipientHandler = async (event) => {
+  event.preventDefault();
+
+  const name = document.querySelector('#recipient-name').value.trim();
+  const relationship = document.querySelector('#recipient-relationship').value.trim();
+  const budget = document.querySelector('#budget').value.trim();
+  const hasGiftIdea = document.querySelector("#hasGiftIdea").checked
+
+  if (name && relationship && budget && hasGiftIdea ) {
+    const response = await fetch(`/api/recipient`, {
+      method: 'POST',
+      body: JSON.stringify({ name, relationship, budget, hasGiftIdea }),
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    });
+
+    if (response.ok) {
+      document.location.replace('/gift');
+    } else {
+      alert('Failed to create recipient');
+    }
+  }
+}
+
+
 const delButtonHandler = async (event) => {
   if (event.target.hasAttribute('data-id')) {
     const id = event.target.getAttribute('data-id');
@@ -38,11 +64,15 @@ const delButtonHandler = async (event) => {
     }
   }
 };
+document
+.querySelector('#addRecipientButton')
+.addEventListener('click', recipientHandler);
 
 document
   .querySelector('#gift-btn')
   .addEventListener('click', newFormHandler);
 
-document
-  .querySelector('.gift-list')
-  .addEventListener('click', delButtonHandler);
+
+// document
+//   .querySelector('.gift-list')
+//   .addEventListener('click', delButtonHandler);
