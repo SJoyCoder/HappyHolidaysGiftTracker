@@ -103,10 +103,10 @@
             <label class="label" for="gift-recipient" name="gift-recipient">Recipient</label>
             <div class="control">
               <div class="select">
-                <select>
+                {{!-- <select>
                   <option>make loop</option>
                   <option>of recipients</option>
-                </select>
+                </select> --}}
               </div>
             </div>
           </div>
@@ -128,6 +128,7 @@
       <div class="row mb-2">
         <div class="col-md-8">
           <h4><a href="/gift/{{gift.id}}">{{gift.name}}</a></h4>
+          <h4><a href="/gift/{{gift.id}}">{{gift.cost}}</a></h4>
         </div>
         <div class="col-md-4">
           <button class="btn btn-sm btn-danger" data-id="{{gift.id}}">DELETE</button>
