@@ -12,7 +12,7 @@ router.post('/', withAuth, async (req, res) => {
     console.log(newGift.id);
     const recipientGift = await RecipientGifts.create({
       giftId: newGift.id,
-      recipientId: 1,
+      recipientId: 5,
     });
     
 
