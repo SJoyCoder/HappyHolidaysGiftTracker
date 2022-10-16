@@ -114,7 +114,6 @@ li a:hover:not(.active) {
 .active {
   background-color: rgb(193, 189, 189);
   color:#b53642;
-  font-family:fantasy;
   font-size:20px;
   font-weight: bold;
 }
@@ -130,4 +129,7 @@ li a:hover:not(.active) {
 #logout:hover{
   background-color: rgba(159,156,156,1);
 
+}
+#giftInfo{
+font-weight: bold;
 }
