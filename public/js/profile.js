@@ -69,8 +69,8 @@ document
 .addEventListener('click', recipientHandler);
 
 document
-  .querySelector('#gift-btn')
-  .addEventListener('submit', newFormHandler);
+  .querySelector('#addGiftButton')
+  .addEventListener('click', newFormHandler);
 
 
 document
