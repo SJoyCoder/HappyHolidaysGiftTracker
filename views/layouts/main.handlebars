@@ -33,11 +33,14 @@ li a {
 }
 
 li a:hover:not(.active) {
-  background-color: #111;
+  background-color: rgba(159,156,156,1);
 }
 
 .active {
-  background-color: rgba(159,156,156,1);
+  background-color: rgb(193, 189, 189);
+  color:#b53642;
+  font-family:fantasy;
+  font-weight:900;
 }
 </style>
 </head>
@@ -57,9 +60,7 @@ li a:hover:not(.active) {
 
 
 
-  {{!-- <div class="bg-img"> --}}
 
-  {{!-- </div>
   {{!-- style element not found in css --}}
   <div class="flex-column justify-space-around" style="height: 100vh;">
     <header class="display-flex justify-space-between align-center p-2">
@@ -77,38 +78,8 @@ li a:hover:not(.active) {
         <a href="/login">Login</a>
         {{/if}}
       </nav>
-    </header> --}}
+    </header>
 
-
-
-
-
-
-<nav class="navbar is-light" class="navbar" role="navigation" aria-label="main navigation">
-  <div class="navbar-start">
-    <a class="navbar-item" id="NavbarTitle">🎁Happy Holidays Christmas Tracker🎁</a>
-    
-
-  </div>
-  <div id="navbarBasicExample" class="navbar-menu">
-    <div class="navbar-end">
-      <a class="navbar-item" href="/profile">
-      {{#if logged_in}}
-        Create Gifts
-      </a>
-      <a class="navbar-item" href="/gift">
-        View Gifts
-      </a>
-      {{else}}
-    <a class="navbar-item" href="/login">
-        login
-      </a>
-{{!-- <button class="no-button" id="logout">logout</button> --}}
-        {{/if}}
-    </div>
-  </div>
-</nav>
-    
     <main class="container container-fluid mt-5">
       <!-- Render the sub layout -->
       {{{ body }}}

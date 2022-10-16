@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Gifts, RecipientGifts } = require('../../models');
+const { Gifts, RecipientGifts, Recipient} = require('../../models');
 const withAuth = require('../../utils/auth');
 
 router.post('/', withAuth, async (req, res) => {
