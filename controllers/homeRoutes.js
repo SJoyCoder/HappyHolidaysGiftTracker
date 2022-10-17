@@ -2,6 +2,16 @@ const router = require('express').Router();
 const { Gifts, User, RecipientGifts, Recipient } = require('../models');
 const withAuth = require('../utils/auth');
 
+router.get('/', (req, res) => {
+  // If the user is already logged in, redirect the request to another route
+  if (req.session.logged_in) {
+    res.redirect('/profile');
+    return;
+  }
+
+  res.render('login');
+});
+
 router.get('/gift', async (req, res) => {
   try {
     // Get all gifts and JOIN with user data
@@ -68,11 +78,11 @@ router.get('/profile', withAuth, async (req, res) => {
     // Find the logged in user based on the session ID
     const userData = await User.findByPk(req.session.user_id, {
       attributes: { exclude: ['password'] },
-    //  include: [{ model: Gifts }],
+     include: [{ model: Recipient }],
     });
 
     const user = userData.get({ plain: true });
-
+    console.log(user);
     res.render('profile', {
       ...user,
       logged_in: true,

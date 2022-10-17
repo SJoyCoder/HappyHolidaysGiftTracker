@@ -49,7 +49,7 @@
       <div class="field is-grouped">
         <div class="control">
 
-          <button class="button is-success" id = "addRecipientButton">Add</button>
+          <button class="button grnbtn" id = "addRecipientButton">Add</button>
 
           
 
@@ -103,17 +103,18 @@
             <label class="label" for="gift-recipient" name="gift-recipient">Recipient</label>
             <div class="control">
               <div class="select">
-                {{!-- <select>
-                  <option>make loop</option>
-                  <option>of recipients</option>
-                </select> --}}
+                <select>
+                   {{#each recipients as |recipient|}}
+                  <option value="{{recipient.id}}">{{recipient.name}}</option>
+                  {{/each}}
+                </select>
               </div>
             </div>
           </div>
 
           <div class="field is-grouped">
             <div class="control">
-              <button class="button is-success" id="addGiftButton">Create</button>
+              <button class="button grnbtn" id="addGiftButton">Create</button>
             </div>
           </div>
       </div>
@@ -136,6 +137,5 @@
       {{/each}}
   </div>
   {{/if}}
-
 
   <script src="./js/profile.js"></script>
