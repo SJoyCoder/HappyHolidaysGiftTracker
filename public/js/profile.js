@@ -1,15 +1,17 @@
 const newFormHandler = async (event) => {
   event.preventDefault();
-
+console.log(event)
   const giftName = document.querySelector('#gift-name').value.trim();
   const cost = document.querySelector('#gift-cost').value.trim();
   const whereToBuy = document.querySelector('#gift-store').value.trim();
   const is_purchased = document.querySelector("#cd-bought").checked
-
+  const recipientId = document.querySelector("select").value
+  
   if (giftName && cost && whereToBuy ) {
+   
     const response = await fetch(`/api/gift`, {
       method: 'POST',
-      body: JSON.stringify({ giftName, is_purchased, cost, whereToBuy  }),
+      body: JSON.stringify({ giftName, is_purchased, cost, whereToBuy, recipientId  }),
       headers: {
         'Content-Type': 'application/json',
       },
