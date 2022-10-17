@@ -103,10 +103,11 @@
             <label class="label" for="gift-recipient" name="gift-recipient">Recipient</label>
             <div class="control">
               <div class="select">
-                {{!-- <select>
-                  <option>make loop</option>
-                  <option>of recipients</option>
-                </select> --}}
+                <select>
+                   {{#each recipients as |recipient|}}
+                  <option>{{recipient.name}}</option>
+                  {{/each}}
+                </select>
               </div>
             </div>
           </div>
@@ -137,6 +138,5 @@
       {{/each}}
   </div>
   {{/if}}
-
 
   <script src="./js/profile.js"></script>
