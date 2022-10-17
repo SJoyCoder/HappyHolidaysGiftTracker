@@ -11,7 +11,7 @@
     <h1 style="font-weight:600; text-decoration: underline; font-size: x-large;">{{recGift.name}}{{{get_emoji}}}</h1>
     {{#each recGift.gifts as |gift|}}
     <p id="giftInfo">{{gift.giftName}} ${{gift.cost}} </p>
-    <p>Store:{{gift.whereToBuy}},  Purchased?:{{gift.is_purchased}}</p>
+    <p>Store: {{gift.whereToBuy}},  Purchased?: {{gift.is_purchased}}</p>
 
     {{/each}}
 </div>
