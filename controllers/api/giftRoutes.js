@@ -12,7 +12,7 @@ router.post('/', withAuth, async (req, res) => {
     console.log(newGift.id);
     const recipientGift = await RecipientGifts.create({
       giftId: newGift.id,
-      recipientId: 8,
+      recipientId: 5,
     });
     
 
@@ -28,7 +28,6 @@ router.delete('/:id', withAuth, async (req, res) => {
     const giftData = await Gifts.destroy({
       where: {
         id: req.params.id,
-        user_id: req.session.user_id,
       },
     });
 
