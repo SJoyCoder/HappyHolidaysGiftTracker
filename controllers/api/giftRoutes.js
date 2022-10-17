@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Gifts, RecipientGifts } = require('../../models');
+const { Gifts, RecipientGifts, Recipient} = require('../../models');
 const withAuth = require('../../utils/auth');
 
 router.post('/', withAuth, async (req, res) => {
@@ -12,7 +12,7 @@ router.post('/', withAuth, async (req, res) => {
     console.log(newGift.id);
     const recipientGift = await RecipientGifts.create({
       giftId: newGift.id,
-      recipientId: 1,
+      recipientId: 8,
     });
     
 
