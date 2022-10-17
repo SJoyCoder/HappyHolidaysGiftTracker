@@ -24,6 +24,7 @@ const newFormHandler = async (event) => {
   }
 };
 
+
 const recipientHandler = async (event) => {
   event.preventDefault();
 
@@ -32,7 +33,7 @@ const recipientHandler = async (event) => {
   const budget = document.querySelector('#budget').value.trim();
   const hasGiftIdea = document.querySelector("#hasGiftIdea").checked
 
-  if (name && relationship && budget && hasGiftIdea ) {
+  if (name && relationship && budget ) {
     const response = await fetch(`/api/recipient`, {
       method: 'POST',
       body: JSON.stringify({ name, relationship, budget, hasGiftIdea }),
