@@ -31,15 +31,21 @@ html {
   height: 100vh
 }
 body {
+  font-family: 'Berkshire Swash', cursive;
   background-image: url("/assets/images/bg2-img.png");
   background-position: center center;
   background-repeat: repeat-x;
   /* background-attachment: fixed; */
   background-size:  cover;
   height: 100vh;
- overflow:auto
+  overflow:auto
 }
 
+button {
+  background-color: #606b5a;
+  color: white;
+  border-radius: 5px;
+}
 /*  */
 
 /* login page */
@@ -80,7 +86,7 @@ body {
   color: black;
   background: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(159,156,156,1) 100%);
   margin-bottom: 10px;
-
+  
 }
 
 /* nav bar */
@@ -90,6 +96,11 @@ ul {
   padding: 0;
   overflow: hidden;
   background-color: rgb(193, 189, 189);;
+}
+
+#title {
+  font-size: 45px;
+  color: #b53642
 }
 
 li {
