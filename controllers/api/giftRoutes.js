@@ -9,16 +9,19 @@ router.post('/', withAuth, async (req, res) => {
       
     });
     
-    console.log(newGift.id);
+    console.log(newGift);
+    console.log(req.body)
     const recipientGift = await RecipientGifts.create({
       giftId: newGift.id,
-      recipientId: 8,
+      recipientId: req.body.recipientId,
+      // recipientId:req.session.recipientGift,
     });
     
+    console.log(recipientGift)
 
     res.status(200).json(newGift);
   } catch (err) {
-    console.log(err)
+    console.log()
     res.status(400).json(err);
   }
 });
