@@ -12,11 +12,9 @@
     {{#each recGift.gifts as |gift|}}
     <p id="giftInfo">{{gift.giftName}} ${{gift.cost}} </p>
 
-    <p>Store:{{gift.whereToBuy}},  Purchased?:{{gift.is_purchased}}</p>
-    <button class="button grnbtn deleteButton" data-id="{{gift.id}}" id="deleteButton" >Delete</button>
-
-    <p>Store: {{gift.whereToBuy}},  Purchased?: {{gift.is_purchased}}</p>
-
+    <span>Store: {{gift.whereToBuy}},  Purchased: {{gift.is_purchased}}</span>
+    <button class="button grnbtn deleteButton" data-id="{{gift.id}}" id="deleteButton">Delete</button>
+  
 
     {{/each}}
 </div>

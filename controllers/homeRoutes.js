@@ -31,6 +31,7 @@ router.get('/gift', async (req, res) => {
           through: RecipientGifts,
         },
       ],
+      where: {user_id:req.session.user_id}
     });
     // Serialize data so the template can read it
     // const gifts = giftData.map((gift) => gift.get({ plain: true }));

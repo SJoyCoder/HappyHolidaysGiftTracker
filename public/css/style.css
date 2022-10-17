@@ -46,11 +46,14 @@ button {
   color: white;
   border-radius: 5px;
   padding: 5px;
+  font-family: 'Berkshire Swash', cursive;
+  margin-left: 15px;
 }
 
 .grnbtn {
   background-color: #606b5a;
   color: white;
+  
 }
 /*  */
 
@@ -105,7 +108,7 @@ ul {
 }
 
 #title {
-  margin-left: 10px;
+  margin-left: 15px;
   font-size: 45px;
   color: #b53642
 }
