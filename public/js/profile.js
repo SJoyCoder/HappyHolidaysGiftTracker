@@ -53,21 +53,7 @@ const recipientHandler = async (event) => {
 }
 
 
-const delButtonHandler = async (event) => {
-  if (event.target.hasAttribute('data-id')) {
-    const id = event.target.getAttribute('data-id');
 
-    const response = await fetch(`/api/gifts/${id}`, {
-      method: 'DELETE',
-    });
-
-    if (response.ok) {
-      document.location.replace('/profile');
-    } else {
-      alert('Failed to delete gift');
-    }
-  }
-};
 document
 .querySelector('#addRecipientButton')
 .addEventListener('click', recipientHandler);
@@ -77,6 +63,10 @@ document
   .addEventListener('click', newFormHandler);
 
 
+
+
+
 document
   .querySelector('.gift-list')
   .addEventListener('click', delButtonHandler);
+
